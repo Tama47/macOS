@@ -1,5 +1,13 @@
 # macOS
 
+### Network
+```bash
+curl ifconfig.me && echo
+```
+```bash
+speedtest --server-id=50679
+```
+
 ### Remove iCloud Downloads
 ```bash
 cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
