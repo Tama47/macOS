@@ -11,5 +11,5 @@ find . -type f -exec brctl evict {} \;
 chflags hidden 
 ```
 ```bash
-chflags nohidden
+chflags nohidden 
 ```
