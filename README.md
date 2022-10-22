@@ -13,6 +13,10 @@ speedtest --server-id=50679
 cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
 find . -type f -exec brctl evict {} \;
 ```
+```bash
+cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
+killall bird && rm -rf CloudDocs
+```
 
 ### Hide/Unhide Files
 ```bash
