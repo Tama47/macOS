@@ -1,21 +1,10 @@
 # macOS
 
-### Network
-```bash
-curl ifconfig.me && echo
-```
-```bash
-speedtest --server-id=50679
-```
-
 ### Remove iCloud Downloads
 ```bash
 cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
-find . -type f -exec brctl evict {} \;
-```
-```bash
-cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
 killall bird && rm -rf CloudDocs
+find . -type f -exec brctl evict {} \;
 ```
 
 ### Hide/Unhide Files
