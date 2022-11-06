@@ -1,10 +1,13 @@
 # macOS
 
-### Remove iCloud Downloads
+### Compress without .DS_Store and __MACOSX
 ```bash
-cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
-killall bird && rm -rf CloudDocs
-find . -type f -exec brctl evict {} \;
+zip -r Archive.zip . -x ".*" -x "__MACOSX"
+```
+
+### Create a RAM Disk
+```bash
+diskutil erasevolume HFS+ "RAM Disk" `hdiutil attach -nomount ram://2048000`
 ```
 
 ### Hide/Unhide Files
@@ -15,9 +18,21 @@ chflags hidden
 chflags nohidden 
 ```
 
-### Compress without .DS_Store and __MACOSX
+### Prevent creation of .DS_Store files on network shares
 ```bash
-zip -r Archive.zip . -x ".*" -x "__MACOSX"
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+```
+
+### Python SimpleHTTPServer
+```bash
+python -m SimpleHTTPServer
+```
+
+### Remove iCloud Downloads
+```bash
+cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
+killall bird && rm -rf CloudDocs
+find . -type f -exec brctl evict {} \;
 ```
 
 ### Reset and Lock Size of Dock
@@ -26,19 +41,4 @@ defaults write com.apple.dock tilesize -integer 64; killall Dock
 ```
 ```bash
 defaults write com.apple.dock size-immutable -bool yes; killall Dock
-```
-
-### Python SimpleHTTPServer
-```bash
-python -m SimpleHTTPServer
-```
-
-### Create a RAM Disk
-```bash
-diskutil erasevolume HFS+ "RAM Disk" `hdiutil attach -nomount ram://2048000`
-```
-
-### Prevent creation of .DS_Store files on network shares
-```bash
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 ```
