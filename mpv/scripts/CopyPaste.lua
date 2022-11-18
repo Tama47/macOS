@@ -21,14 +21,14 @@ local o = {
 	osd_messages = true, --true is for displaying osd messages when actions occur. Change to false will disable all osd messages generated from this script
 	time_seperator = ' 🕒 ', --Time seperator that will be shown before the saved time in osd messages
 	prefer_filename_over_title = 'local', --Prefers to copy filename over filetitle. Select between 'local', 'protocols', 'all', and 'none'. 'local' prefer filenames for videos that are not protocols. 'protocols' will prefer filenames for protocols only. 'all' will prefer filename over filetitle for both protocols and not protocols videos. 'none' will always use filetitle instead of filename
-	copy_time_method = 'all', --Option to copy time with video, 'none' for disabled, 'all' to copy time for all videos, 'protocols' for copying time only for protocols, 'specifics' to copy time only for websites defined below, 'local' to copy time for videos that are not protocols
+	copy_time_method = 'none', --Option to copy time with video, 'none' for disabled, 'all' to copy time for all videos, 'protocols' for copying time only for protocols, 'specifics' to copy time only for websites defined below, 'local' to copy time for videos that are not protocols
 	specific_time_attributes=[[
 	[ ["twitter", "?t=", ""], ["twitch", "?t=", "s"], ["youtube", "&t=", "s"] ]
 	]], --The time attributes which will be added when copying protocols of specific websites from this list. Additional attributes can be added following the same format.
-	protocols_time_attribute = '&t=', --The text that will be copied before the seek time when copying a protocol video from mpv 
-	local_time_attribute = '&time=', --The text that will be copied before the seek time when copying a local video from mpv
+	protocols_time_attribute = '', --The text that will be copied before the seek time when copying a protocol video from mpv 
+	local_time_attribute = '', --The text that will be copied before the seek time when copying a local video from mpv
 	pastable_time_attributes=[[
-	[" | time="]
+	[""]
 	]], --The time attributes that can be pasted for resume, specific_time_attributes, protocols_time_attribute, local_time_attribute are automatically added
 	copy_keybind=[[
 	["ctrl+c", "ctrl+C", "meta+c", "meta+C"]
@@ -37,11 +37,11 @@ local o = {
 	paste_keybind=[[
 	["ctrl+v", "ctrl+V", "meta+v", "meta+V"]
 	]], --Keybind that will be used to paste
-	copy_specific_behavior = 'path', --Copy behavior when using copy_specific_keybind. select between 'title', 'path', 'timestamp', 'path&timestamp'.
+	copy_specific_behavior = 'timestamp', --Copy behavior when using copy_specific_keybind. select between 'title', 'path', 'timestamp', 'path&timestamp'.
 	copy_specific_keybind=[[
 	["ctrl+alt+c", "ctrl+alt+C", "meta+alt+c", "meta+alt+C"]
 	]], --Keybind that will be used to copy based on the copy behavior specified
-	paste_specific_behavior = 'playlist', --Paste behavior when using paste_specific_keybind. select between 'playlist', 'timestamp', 'force'.
+	paste_specific_behavior = 'timestamp', --Paste behavior when using paste_specific_keybind. select between 'playlist', 'timestamp', 'force'.
 	paste_specific_keybind=[[
 	["ctrl+alt+v", "ctrl+alt+V", "meta+alt+v", "meta+alt+V"]
 	]], --Keybind that will be used to paste based on the paste behavior specified
