@@ -23,6 +23,20 @@ chflags nohidden
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 ```
 
+### Python Apache Server
+Command to restart mac apache server:
+```bash
+sudo apachectl restart
+```
+Command to start mac apache server:
+```bash
+sudo apachectl start
+```
+Command to stop mac apache server:
+```bash
+sudo apachectl stop
+```
+
 ### Python SimpleHTTPServer
 ```bash
 python -m SimpleHTTPServer
