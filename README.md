@@ -36,6 +36,10 @@ Command to stop mac apache server:
 ```bash
 sudo apachectl stop
 ```
+Edit the Apache configuration file:
+```bash
+sudo nano /etc/apache2/httpd.conf
+```
 
 ### Python SimpleHTTPServer
 ```bash
