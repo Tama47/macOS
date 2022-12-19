@@ -53,7 +53,7 @@ killall bird && rm -rf CloudDocs
 find . -type f -exec brctl evict {} \;
 ```
 
-# Reset Bluetooth Module
+### Reset Bluetooth Module
 ```bash
 sudo pkill bluetoothd
 ```
