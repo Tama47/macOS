@@ -53,6 +53,11 @@ killall bird && rm -rf CloudDocs
 find . -type f -exec brctl evict {} \;
 ```
 
+# Reset Bluetooth Module
+```bash
+sudo pkill bluetoothd
+```
+
 ### Reset and Lock Size of Dock
 ```bash
 defaults write com.apple.dock tilesize -integer 64; killall Dock
